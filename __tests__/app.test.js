@@ -41,13 +41,24 @@ describe('cat-app routes', () => {
     })
   })
 
-  it.skip('Gets a cat by id', async () => {
-    const cat = { id: '1', catName: 'Kittyface', color: 'stripes', age: 11, fact: 'fact'};
+  it('Gets a cat by id', async () => {
+    const cat = [{ id: '1', catName: 'Kittyface', color: 'stripes', age: 11, fact: 'fact'}];
 
     return request(app)
     .get('/api/v1/cats/1')
     .then((res) => {
        expect(res.body).toEqual(cat);
+    })
+  })
+
+  it('Updates a cat in the db', async () => {
+    const updatedCat = { id: '1', catName: 'Kittyface', color: 'stripes', age: 12, fact: 'fact'};
+
+    return request(app)
+    .put('/api/v1/cats/1')
+    .send(updatedCat)
+    .then((res) => {
+       expect(res.body).toEqual([updatedCat]);
     })
   })
 });

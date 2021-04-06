@@ -61,4 +61,14 @@ describe('cat-app routes', () => {
        expect(res.body).toEqual([updatedCat]);
     })
   })
+
+  it('Deletes a cat from the db', async () => {
+    const cat = { id: '1', catName: 'Kittyface', color: 'stripes', age: 12, fact: 'fact'};
+
+    return request(app)
+    .delete('/api/v1/cats/1')
+    .then((res) => {
+       expect(res.body).toEqual([cat]);
+    })
+  })
 });

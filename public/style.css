@@ -1,0 +1,16 @@
+body {
+    background-color: rgb(245, 193, 173);
+    font-weight: 400;
+}
+
+#cats {
+    padding: 30px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+#create-cat {
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}

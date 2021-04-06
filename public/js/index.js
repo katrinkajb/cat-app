@@ -3,8 +3,10 @@ const ul = document.getElementById('cats');
 
 const newCat = (cat) => {
     const li = document.createElement('li');
+    const fact = cat.fact;
 
-    li.textContent = `${cat.catName} is a ${cat.color} cat that is ${cat.age} years old.`;
+    li.textContent = `${cat.catName} is a ${cat.color} cat that is ${cat.age} years old. 
+    Fun cat fact: ${fact}`;
     
     ul.appendChild(li);
 }
@@ -24,14 +26,15 @@ form.addEventListener('submit', (event) => {
             catName: fd.get('name'),
             color: fd.get('color'),
             age: fd.get('age'),
+            fact: fd.get('fact')
         }),
     })
     .then((res) => res.json())
     .then(newCat);
 });
 
-// fetch('/api/v1/cats')
-//     .then((res) => res.json())
-//     .then((cats) => {
-//         cats.forEach(newCat);
-//     });
+fetch('/api/v1/cats')
+    .then((res) => res.json())
+    .then((cats) => {
+        cats.forEach(newCat);
+    });

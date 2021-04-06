@@ -5,9 +5,18 @@ const newCat = (cat) => {
     const li = document.createElement('li');
     const fact = cat.fact;
 
-    li.textContent = `${cat.catName} is a ${cat.color} cat that is ${cat.age} years old. 
-    Fun cat fact: ${fact}`;
+    li.textContent = `${cat.catName} is ${cat.age} years old and has ${cat.color} fur. 
+    FUN CAT FACT: ${fact}`;
     
+    const edit = document.createElement('button');
+    edit.addEventListener('click', (cat) => {
+        window.location = './detail.html'
+        // get by id for cat.id
+        // set state (local storage?)
+    });
+    edit.textContent = 'Edit cat';
+    li.append(edit)
+
     ul.appendChild(li);
 }
 

@@ -5,36 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css">
-    <title>Cats</title>
+    <title>Edit page</title>
   </head>
   <body>
-    <h1>Cats!</h1>
+    <h1>Edit Page</h1>
 
     <form id="create-cat">
       <div>
         <label> 
-        <span>Cat Name</span>
-        <input type="text" name="name" />
+        <span>Update Cat Name</span>
+        <input type="text" name="name" value=state.catName />
         </label>
       </div>
       <div>
         <label> 
-          <span>Color</span>
-          <input type="text" name="color" />
+          <span>Update Color</span>
+          <input type="text" name="color" value=state.color />
         </label>
       </div>
       <div>
         <label> 
-          <span>Age</span>
-          <input type="number" name="age" />
+          <span>Update Age</span>
+          <input type="number" name="age" value=state.age />
         </label>
       </div>
       <div>
-        <button>Add Cat</button>
+        <button>Update Cat Info</button>
       </div>
     </form>
 
-    <ul id="cats"></ul>
+    <!-- <ul id="cats"></ul> -->
 
     <script type="module" src="./js/index.js"></script>
   </body>

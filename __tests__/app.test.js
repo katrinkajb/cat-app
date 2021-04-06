@@ -63,7 +63,7 @@ describe('cat-app routes', () => {
   })
 
   it('Deletes a cat from the db', async () => {
-    const cat = { id: '1', catName: 'Kittyface', color: 'stripes', age: 12, fact: 'fact'};
+    const cat = { id: '1', catName: 'Kittyface', color: 'stripes', age: 11, fact: 'fact'};
 
     return request(app)
     .delete('/api/v1/cats/1')

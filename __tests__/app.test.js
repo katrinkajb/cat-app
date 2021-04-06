@@ -27,7 +27,7 @@ describe('cat-app routes', () => {
     .then((res) => {
  
       expect(getFact).toHaveBeenCalledTimes(1);
-      expect(res.body).toEqual([newCat]);
+      expect(res.body).toEqual(newCat);
     })
   })
 
@@ -42,7 +42,7 @@ describe('cat-app routes', () => {
   })
 
   it('Gets a cat by id', async () => {
-    const cat = [{ id: '1', catName: 'Kittyface', color: 'stripes', age: 11, fact: 'fact'}];
+    const cat = { id: '1', catName: 'Kittyface', color: 'stripes', age: 11, fact: 'fact'};
 
     return request(app)
     .get('/api/v1/cats/1')
@@ -58,7 +58,7 @@ describe('cat-app routes', () => {
     .put('/api/v1/cats/1')
     .send(updatedCat)
     .then((res) => {
-       expect(res.body).toEqual([updatedCat]);
+       expect(res.body).toEqual(updatedCat);
     })
   })
 
@@ -68,7 +68,7 @@ describe('cat-app routes', () => {
     return request(app)
     .delete('/api/v1/cats/1')
     .then((res) => {
-       expect(res.body).toEqual([cat]);
+       expect(res.body).toEqual(cat);
     })
   })
 });
